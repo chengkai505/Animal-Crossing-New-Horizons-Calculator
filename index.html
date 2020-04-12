@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+
+<html lang="zh-tw">
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>集合吧！動物森友會價錢計算機</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans|Noto+Sans+TC:400,900&display=swap">
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="main.js"></script>
+</head>
+<body>
+    <header>
+        <h1>集合吧！動物森友會價錢計算機</h1>
+        <h2>選擇品項，自動計帳</h2>
+        <div class="description">
+            百密一疏，Nook 商店裡的豆狸、粒狸會算錯錢？這個計算機幫你驗證究竟豆狸、粒狸算的對不對。品項可以在列表的地方手動新增，也可以用搜尋來找品項喔！
+        </div>
+    </header>
+    <main>
+        <h3>賣給誰？</h3>
+        <div id="sell-destination">
+            <input name="source" type="radio" id="dot-eight" value="0.8" />
+            <label for="dot-eight">收購箱</label>
+            <input name="source" type="radio" id="normal" value="1" checked />
+            <label for="normal">Nook 商店</label>
+            <input name="source" type="radio" id="one-dot-five" value="1.5" />
+            <label for="one-dot-five">高價收購</label>
+        </div>
+        <h3>找東西</h3>
+        <div id="search">
+            <input id="search-bar" placeholder="搜尋" />
+            <div id="result-container"><ul id="result-list"></ul></div>
+        </div>
+        <h3>清單</h3>
+        <div id="list">
+            <div id="list-header" class="row">
+                <div class="type">種類</div>
+                <div class="item">名稱</div>
+                <div class="price">單價</div>
+                <div class="quantity">數量</div>
+                <div class="subtotal">小計</div>
+                <div class="remove">刪除</div>
+            </div>
+            <div id="list-body"></div>
+            <div id="list-footer">
+                <button id="add-new-row">新增一欄</button>
+                <div id="total">
+                    <span id="total-label">總計</span><span id="total-number">0</span><span id="total-unit">鈴錢</span>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        &copy; Copyright 2020 by <a href="https://www.facebook.com/kai73002981">Kai Wu</a>. Image: <a href="https://unsplash.com/">Unsplash</a>.
+    </footer>
+</body>
+</html>
