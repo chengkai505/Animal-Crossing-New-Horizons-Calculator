@@ -143,8 +143,13 @@ xhr.addEventListener("load", function(){
 			totalUpdate();
 		}
 	});
-	document.getElementById("add-new-row").addEventListener("click", function(e){
+	/* Button Event */
+	document.getElementById("add-new-row").addEventListener("click", function(){
 		document.getElementById("list-body").appendChild(createRow(data));
+	});
+	document.getElementById("clear-row").addEventListener("click", function(){
+		document.getElementById("list-body").innerHTML = "";
+		//rowUpdate();
 	});
 });
 xhr.open("GET","data.json");
@@ -167,6 +172,7 @@ function createRow(data) {
 	quantity.classList.add("quantity");
 	subtotal.classList.add("subtotal");
 	remove.classList.add("remove");
+	remove.classList.add("button");
 	quantity.type = "number";
 	item.disabled = true;
 	price.innerText = "0";

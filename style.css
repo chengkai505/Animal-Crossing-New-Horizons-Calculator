@@ -129,11 +129,6 @@ body:before {
 #list-body .type, #list-body .item, #list-body .quantity {
     padding-right: 0;
 }
-#list-body .remove {
-    padding: 0;
-    cursor: pointer;
-    transition: var(--theme-transition);
-}
 #list-body .remove:hover {
     background: red;
     color: #fff;
@@ -152,7 +147,7 @@ body:before {
 #total {
     text-align: right;
 }
-#add-new-row {
+.button {
     outline: none;
     padding: .2rem 1rem;
     border: 1px solid #333;
@@ -163,13 +158,18 @@ body:before {
     cursor: pointer;
     transition: var(--theme-transition);
 }
+.button:active {
+    transform: translateY(.1rem);
+}
 #add-new-row:hover {
     border-color: #008000;
     background: #008000;
     color: #fff;
 }
-#add-new-row:active {
-    transform: translateY(.1rem);
+#clear-row:hover {
+    border-color: red;
+    background: red;
+    color: #fff;
 }
 #total-label {
     font-size: 1.2rem;
