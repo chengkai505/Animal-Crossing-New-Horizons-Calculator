@@ -85,7 +85,9 @@ xhr.addEventListener("load", function(){
 				option.innerText = obj["名稱"];
 				if (obj["名稱"] == target) {
 					option.selected = true;
-					price.value = obj["售價"] * modifier;
+					price.readOnly = e.target.value == "大頭菜" ? false : true;
+					price.value = e.target.value == "大頭菜" ? "" : data[index[e.target.value]["type"]][index[e.target.value]["index"]]["售價"] * modifier;
+					quantity.placeholder = e.target.value == "大頭菜" ? "10 顆為一單位" : "";
 				}
 				item.appendChild(option);
 			});
@@ -126,6 +128,7 @@ xhr.addEventListener("load", function(){
 			if (e.target.value != "NULL") {
 				price.readOnly = e.target.value == "大頭菜" ? false : true;
 				price.value = e.target.value == "大頭菜" ? "" : data[index[e.target.value]["type"]][index[e.target.value]["index"]]["售價"] * modifier;
+				quantity.placeholder = e.target.value == "大頭菜" ? "10 顆為一單位" : "";
 			}
 			break;
 		}
