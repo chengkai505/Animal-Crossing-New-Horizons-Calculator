@@ -85,9 +85,7 @@ xhr.addEventListener("load", function(){
 				option.innerText = obj["名稱"];
 				if (obj["名稱"] == target) {
 					option.selected = true;
-					price.readOnly = target == "大頭菜" ? false : true;
-					price.value = target == "大頭菜" ? "" : data[index[target]["type"]][index[target]["index"]]["售價"] * modifier;
-					quantity.placeholder = target == "大頭菜" ? "10 顆為一單位" : "";
+					priceUpdate(item);
 				}
 				item.appendChild(option);
 			});
@@ -123,13 +121,7 @@ xhr.addEventListener("load", function(){
 			}
 			break;
 		case "item":
-			price.value = "0";
-			subtotal.innerText = "0";
-			if (e.target.value != "NULL") {
-				price.readOnly = e.target.value == "大頭菜" ? false : true;
-				price.value = e.target.value == "大頭菜" ? "" : data[index[e.target.value]["type"]][index[e.target.value]["index"]]["售價"] * modifier;
-				quantity.placeholder = e.target.value == "大頭菜" ? "10 顆為一單位" : "";
-			}
+			priceUpdate(e.target);
 			break;
 		}
 		if (quantity.value != "") {
@@ -199,6 +191,19 @@ function createRow(data) {
 		div.appendChild(order[i]);
 	}
 	return div;
+}
+function priceUpdate(e) {
+	let type = e.parentElement.getElementsByClassName("type")[0];
+	let item = e.parentElement.getElementsByClassName("item")[0];
+	let price = e.parentElement.getElementsByClassName("price")[0];
+	let quantity = e.parentElement.getElementsByClassName("quantity")[0];
+	price.value = "0";
+	subtotal.innerText = "0";
+	if (item.value != "NULL") {
+		price.readOnly = item.value == "大頭菜" ? false : true;
+		price.value = item.target.value == "大頭菜" ? "" : data[index[item.value]["type"]][index[item.value]["index"]]["售價"] * modifier;
+		quantity.placeholder = item.value == "大頭菜" ? "10 顆為一單位" : "";
+	}
 }
 function totalUpdate() {
 	let sum = 0;
