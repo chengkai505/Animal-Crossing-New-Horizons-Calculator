@@ -85,9 +85,9 @@ xhr.addEventListener("load", function(){
 				option.innerText = obj["名稱"];
 				if (obj["名稱"] == target) {
 					option.selected = true;
-					price.readOnly = e.target.value == "大頭菜" ? false : true;
-					price.value = e.target.value == "大頭菜" ? "" : data[index[e.target.value]["type"]][index[e.target.value]["index"]]["售價"] * modifier;
-					quantity.placeholder = e.target.value == "大頭菜" ? "10 顆為一單位" : "";
+					price.readOnly = target == "大頭菜" ? false : true;
+					price.value = target == "大頭菜" ? "" : data[index[target]["type"]][index[target]["index"]]["售價"] * modifier;
+					quantity.placeholder = target == "大頭菜" ? "10 顆為一單位" : "";
 				}
 				item.appendChild(option);
 			});
