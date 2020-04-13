@@ -107,26 +107,32 @@ body:before {
     grid-gap: .5rem;
     margin: .5rem 0;
 }
-#list-body .row > * {
+#list-header > div, #list-body .tag {
+    padding: .3rem 0;
+    border-radius: .5rem;
+    background: #333;
+    color: #fff;
+    cursor: default;
+}
+#list-body .type, #list-body .item, #list-body .price, #list-body .quantity, #list-body #subtotal, #list-body .remove {
     padding: 0 1rem;
     border: 1px solid #ccc;
     border-radius: .5rem;
     width: 100%;
-    height: 2rem;
     font: inherit;
     text-align: inherit;
     background: #fff;
     transition: var(--theme-transition);
     box-sizing: border-box;
 }
-#list-body .row > *:focus {
+#list-body .type:focus, #list-body .item:focus, #list-body .price:focus, #list-body .quantity:focus, #list-body #subtotal:focus, #list-body .remove:focus {
     outline: none;
     box-shadow: 0 0 1em 0.2em rgba(66, 165, 255, 0.4);
 }
 #list-body .tag {
     display: none;
 }
-#list-body .type, #list-body .item, #list-body .quantity {
+#list-body .row input, #list-body .row select {
     padding-right: 0;
 }
 #list-body .remove:hover {

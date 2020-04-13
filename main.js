@@ -1,4 +1,5 @@
 ﻿let xhr = new XMLHttpRequest();
+let t;
 xhr.addEventListener("load", function(){
 	let data = JSON.parse(this.responseText);
 	let index = {};
@@ -14,6 +15,7 @@ xhr.addEventListener("load", function(){
 			index[d["名稱"]]["index"] = i;
 		});
 	});
+	t = index;
 	/* Selling destination */
 	document.getElementById("sell-destination").addEventListener("change", function(){
 		let opt = document.getElementById("sell-destination").getElementsByTagName("input");
@@ -68,25 +70,26 @@ xhr.addEventListener("load", function(){
 		if (e.target.classList.contains("result-item")) {
 			let target = e.target.innerText;
 			let div = createRow(data);
+			let type = div.getElementsByClassName("type")[0];
 			let item = div.getElementsByClassName("item")[0];
 			let price = div.getElementsByClassName("price")[0];
 			let quantity = div.getElementsByClassName("quantity")[0];
 			let subtotal = div.getElementsByClassName("subtotal")[0];
 			item.disabled = false;
-			for (let i = 0; i < div.getElementsByClassName("type")[0].children.length; i++) {
-				if (div.getElementsByClassName("type")[0].children[i].innerText == index[target]["type"]) {
-					div.getElementsByClassName("type")[0].children[i].selected = true;
+			for (let i = 0; i < type.children.length; i++) {
+				if (type.children[i].innerText == index[target]["type"]) {
+					type.children[i].selected = true;
 				}
 			}
 			data[index[target]["type"]].forEach(function(obj){
-				let opt = document.createElement("option");
-				opt.value = obj["名稱"];
-				opt.innerText = obj["名稱"];
+				let option = document.createElement("option");
+				option.value = obj["名稱"];
+				option.innerText = obj["名稱"];
 				if (obj["名稱"] == target) {
-					opt.selected = true;
-					price.innerText = obj["售價"] * modifier;
+					option.selected = true;
+					price.value = obj["售價"] * modifier;
 				}
-				item.appendChild(opt);
+				item.appendChild(option);
 			});
 			document.getElementById("list-body").appendChild(div);
 		}
@@ -103,7 +106,7 @@ xhr.addEventListener("load", function(){
 		switch (e.target.getAttribute("class")) {
 		case "type":
 			item.innerHTML = "<option value='NULL'>請選擇</option>";
-			price.innerText = "0";
+			price.value = "0";
 			subtotal.innerText = "0";
 			if (e.target.value != "NULL") {
 				data[e.target.value].forEach(function(obj){
@@ -120,20 +123,16 @@ xhr.addEventListener("load", function(){
 			}
 			break;
 		case "item":
-			price.innerText = "0";
+			price.value = "0";
 			subtotal.innerText = "0";
 			if (e.target.value != "NULL") {
-				data[type.value].forEach(function(obj){
-					if (e.target.value == obj["名稱"]) {
-						price.innerText = obj["售價"] * modifier;
-						return;
-					}
-				});
+				price.readOnly = e.target.value == "大頭菜" ? false : true;
+				price.value = e.target.value == "大頭菜" ? "" : data[index[e.target.value]["type"]][index[e.target.value]["index"]]["售價"] * modifier;
 			}
 			break;
 		}
 		if (quantity.value != "") {
-			subtotal.innerText = parseInt(price.innerText) * quantity.value;
+			subtotal.innerText = price.value * quantity.value;
 		}
 		totalUpdate();
 	});
@@ -160,7 +159,7 @@ function createRow(data) {
 	let div = document.createElement("div");
 	let type = document.createElement("select");
 	let item = document.createElement("select");
-	let price = document.createElement("span");
+	let price = document.createElement("input");
 	let quantity = document.createElement("input");
 	let subtotal = document.createElement("span");
 	let remove = document.createElement("button");
@@ -175,7 +174,10 @@ function createRow(data) {
 	remove.classList.add("button");
 	quantity.type = "number";
 	item.disabled = true;
-	price.innerText = "0";
+	price.value = "0";
+	price.readOnly = true;
+	price.type = "number";
+	price.placeholder = "請輸入價格";
 	subtotal.innerText = "0";
 	remove.innerHTML = "<span class='fas fa-times'></span>";
 	defaultOpt.value = "NULL";
