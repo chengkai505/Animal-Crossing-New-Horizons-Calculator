@@ -149,7 +149,7 @@ xhr.addEventListener("load", function(){
 	});
 	document.getElementById("clear-row").addEventListener("click", function(){
 		document.getElementById("list-body").innerHTML = "";
-		rowUpdate();
+		totalUpdate();
 	});
 });
 xhr.open("GET","data.json");
