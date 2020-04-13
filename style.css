@@ -135,6 +135,16 @@ body:before {
 #list-body .row input, #list-body .row select {
     padding-right: 0;
 }
+#list-body button {
+    position: relative;
+}
+#list-body button:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
 #list-body .remove:hover {
     background: red;
     color: #fff;

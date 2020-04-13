@@ -57,9 +57,9 @@ xhr.addEventListener("load", function(){
 				});
 			});
 			if (fragment.children.length == 0) {
-				let empty = document.createElement("li");
-				empty.innerText = "找不到結果";
-				fragment.appendChild(empty);
+				let li = document.createElement("li");
+				li.innerText = "找不到結果";
+				fragment.appendChild(li);
 			}
 			document.getElementById("result-list").appendChild(fragment);
 		}
