@@ -137,13 +137,13 @@ xhr.addEventListener("load", function(){
 		}
 		totalUpdate();
 	});
+	/* Button Event */
 	document.getElementById("list-body").addEventListener("click", function(e){
 		if (e.target.classList.contains("remove")) {
 			e.target.parentElement.remove();
 			totalUpdate();
 		}
 	});
-	/* Button Event */
 	document.getElementById("add-new-row").addEventListener("click", function(){
 		document.getElementById("list-body").appendChild(createRow(data));
 	});
