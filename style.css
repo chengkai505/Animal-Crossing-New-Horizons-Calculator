@@ -135,21 +135,6 @@ body:before {
 #list-body .row input, #list-body .row select {
     padding-right: 0;
 }
-#list-body button {
-    position: relative;
-}
-#list-body button:after {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 1;
-}
-#list-body .remove:hover {
-    background: red;
-    color: #fff;
-}
 #list-body .remove:focus {
     box-shadow: none;
 }
@@ -165,6 +150,7 @@ body:before {
     text-align: right;
 }
 .button {
+    position: relative;
     outline: none;
     padding: .2rem 1rem;
     border: 1px solid #333;
@@ -175,18 +161,33 @@ body:before {
     cursor: pointer;
     transition: var(--theme-transition);
 }
+.button:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+}
+.button:hover {
+    background: #333;
+    color: #fff;
+}
 .button:active {
     transform: translateY(.1rem);
 }
-#add-new-row:hover {
+.button.switch:hover {
+    border-color: #ddd;
+    background: #ddd;
+    color: #333;
+}
+.button.safe:hover {
     border-color: #008000;
     background: #008000;
-    color: #fff;
 }
-#clear-row:hover {
-    border-color: red;
-    background: red;
-    color: #fff;
+.button.warn:hover {
+    border-color: #ff0000;
+    background: #ff0000;
 }
 #total-label {
     font-size: 1.2rem;
@@ -205,13 +206,7 @@ body:before {
     display: none;
 }
 #sell-destination label {
-    display: inline-block;
     margin: .5rem;
-    padding: .2rem 1rem;
-    border: 1px solid #333;
-    border-radius: .5rem;
-    transition: var(--theme-transition);
-    cursor: pointer;
 }
 #sell-destination input[type="radio"]:checked + label {
     background: #333;

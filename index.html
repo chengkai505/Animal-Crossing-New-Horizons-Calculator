@@ -60,11 +60,11 @@
         <h3>賣給誰？</h3>
         <div id="sell-destination">
             <input name="source" type="radio" id="dot-eight" value="0.8" />
-            <label for="dot-eight">收購箱</label>
+            <label class="button switch" for="dot-eight">收購箱</label>
             <input name="source" type="radio" id="normal" value="1" checked />
-            <label for="normal">Nook 商店</label>
+            <label class="button switch" for="normal">Nook 商店</label>
             <input name="source" type="radio" id="one-dot-five" value="1.5" />
-            <label for="one-dot-five">高價收購</label>
+            <label class="button switch" for="one-dot-five">高價收購</label>
         </div>
         <h3>找東西</h3>
         <div id="search">
@@ -84,8 +84,8 @@
             <div id="list-body"></div>
             <div id="list-footer">
                 <div class="control-n-settings">
-                    <button id="add-new-row" class="button">新增一欄</button>
-                    <button id="clear-row" class="button">刪除全部</button>
+                    <button id="add-new-row" class="button safe">新增一欄</button>
+                    <button id="clear-row" class="button warn">刪除全部</button>
                 </div>
                 <div id="total">
                     <span id="total-label">總計</span><span id="total-number">0</span><span id="total-unit">鈴錢</span>
