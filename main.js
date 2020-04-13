@@ -1,5 +1,4 @@
 ﻿let xhr = new XMLHttpRequest();
-let t;
 xhr.addEventListener("load", function(){
 	let data = JSON.parse(this.responseText);
 	let index = {};
@@ -15,7 +14,6 @@ xhr.addEventListener("load", function(){
 			index[d["名稱"]]["index"] = i;
 		});
 	});
-	t = index;
 	/* Selling destination */
 	document.getElementById("sell-destination").addEventListener("change", function(){
 		let opt = document.getElementById("sell-destination").getElementsByTagName("input");
