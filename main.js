@@ -85,7 +85,7 @@ xhr.addEventListener("load", function(){
 				option.innerText = obj["名稱"];
 				if (obj["名稱"] == target) {
 					option.selected = true;
-					priceUpdate(item);
+					priceUpdate(data, index, modifier, item);
 				}
 				item.appendChild(option);
 			});
@@ -121,7 +121,7 @@ xhr.addEventListener("load", function(){
 			}
 			break;
 		case "item":
-			priceUpdate(e.target);
+			priceUpdate(data, index, modifier, e.target);
 			break;
 		}
 		if (quantity.value != "") {
@@ -193,7 +193,7 @@ function createRow(data) {
 	}
 	return div;
 }
-function priceUpdate(e) {
+function priceUpdate(data, index, modifier, e) {
 	let type = e.parentElement.getElementsByClassName("type")[0];
 	let item = e.parentElement.getElementsByClassName("item")[0];
 	let price = e.parentElement.getElementsByClassName("price")[0];
