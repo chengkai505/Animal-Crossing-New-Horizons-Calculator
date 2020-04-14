@@ -198,6 +198,7 @@ function priceUpdate(e) {
 	let item = e.parentElement.getElementsByClassName("item")[0];
 	let price = e.parentElement.getElementsByClassName("price")[0];
 	let quantity = e.parentElement.getElementsByClassName("quantity")[0];
+	let subtotal = e.parentElement.getElementsByClassName("subtotal")[0];
 	price.value = "0";
 	subtotal.innerText = "0";
 	if (item.value != "NULL") {
