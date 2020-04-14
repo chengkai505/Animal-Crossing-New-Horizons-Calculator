@@ -89,7 +89,7 @@ xhr.addEventListener("load", function(){
 					subtotal.innerText = "0";
 					if (item.value != "NULL") {
 						price.readOnly = item.value == "大頭菜" ? false : true;
-						price.value = item.target.value == "大頭菜" ? "" : data[index[item.value]["type"]][index[item.value]["index"]]["售價"] * modifier;
+						price.value = item.value == "大頭菜" ? "" : data[index[item.value]["type"]][index[item.value]["index"]]["售價"] * modifier;
 						quantity.placeholder = item.value == "大頭菜" ? "10 顆為一單位" : "";
 					}
 				}
@@ -131,7 +131,7 @@ xhr.addEventListener("load", function(){
 			subtotal.innerText = "0";
 			if (item.value != "NULL") {
 				price.readOnly = item.value == "大頭菜" ? false : true;
-				price.value = item.target.value == "大頭菜" ? "" : data[index[item.value]["type"]][index[item.value]["index"]]["售價"] * modifier;
+				price.value = item.value == "大頭菜" ? "" : data[index[item.value]["type"]][index[item.value]["index"]]["售價"] * modifier;
 				quantity.placeholder = item.value == "大頭菜" ? "10 顆為一單位" : "";
 			}
 			break;
