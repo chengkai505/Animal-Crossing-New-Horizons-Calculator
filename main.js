@@ -34,7 +34,7 @@ xhr.addEventListener("load", function(){
 			if (type.value == "NULL") {
 				continue;
 			}
-			price.innerText = data[index[item.value]["type"]][index[item.value]["index"]]["售價"] * modifier;
+			price.value = data[index[item.value]["type"]][index[item.value]["index"]]["售價"] * modifier;
 			subtotal.innerText = parseInt(quantity.value != "" ? quantity.value : 0) * data[index[item.value]["type"]][index[item.value]["index"]]["售價"] * modifier;
 			sum += parseInt(subtotal.innerText);
 		}
@@ -85,7 +85,13 @@ xhr.addEventListener("load", function(){
 				option.innerText = obj["名稱"];
 				if (obj["名稱"] == target) {
 					option.selected = true;
-					priceUpdate(data, index, modifier, item);
+					price.value = "0";
+					subtotal.innerText = "0";
+					if (item.value != "NULL") {
+						price.readOnly = item.value == "大頭菜" ? false : true;
+						price.value = item.target.value == "大頭菜" ? "" : data[index[item.value]["type"]][index[item.value]["index"]]["售價"] * modifier;
+						quantity.placeholder = item.value == "大頭菜" ? "10 顆為一單位" : "";
+					}
 				}
 				item.appendChild(option);
 			});
@@ -121,7 +127,13 @@ xhr.addEventListener("load", function(){
 			}
 			break;
 		case "item":
-			priceUpdate(data, index, modifier, e.target);
+			price.value = "0";
+			subtotal.innerText = "0";
+			if (item.value != "NULL") {
+				price.readOnly = item.value == "大頭菜" ? false : true;
+				price.value = item.target.value == "大頭菜" ? "" : data[index[item.value]["type"]][index[item.value]["index"]]["售價"] * modifier;
+				quantity.placeholder = item.value == "大頭菜" ? "10 顆為一單位" : "";
+			}
 			break;
 		}
 		if (quantity.value != "") {
@@ -192,20 +204,6 @@ function createRow(data) {
 		div.appendChild(order[i]);
 	}
 	return div;
-}
-function priceUpdate(data, index, modifier, e) {
-	let type = e.parentElement.getElementsByClassName("type")[0];
-	let item = e.parentElement.getElementsByClassName("item")[0];
-	let price = e.parentElement.getElementsByClassName("price")[0];
-	let quantity = e.parentElement.getElementsByClassName("quantity")[0];
-	let subtotal = e.parentElement.getElementsByClassName("subtotal")[0];
-	price.value = "0";
-	subtotal.innerText = "0";
-	if (item.value != "NULL") {
-		price.readOnly = item.value == "大頭菜" ? false : true;
-		price.value = item.target.value == "大頭菜" ? "" : data[index[item.value]["type"]][index[item.value]["index"]]["售價"] * modifier;
-		quantity.placeholder = item.value == "大頭菜" ? "10 顆為一單位" : "";
-	}
 }
 function totalUpdate() {
 	let sum = 0;
