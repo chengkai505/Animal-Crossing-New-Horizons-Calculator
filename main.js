@@ -173,6 +173,7 @@ function createRow(data) {
 	subtotal.classList.add("subtotal");
 	remove.classList.add("remove");
 	remove.classList.add("button");
+	remove.classList.add("warn");
 	quantity.type = "number";
 	item.disabled = true;
 	price.value = "0";
