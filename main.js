@@ -85,13 +85,9 @@ xhr.addEventListener("load", function(){
 				option.innerText = obj["名稱"];
 				if (obj["名稱"] == target) {
 					option.selected = true;
-					price.value = "0";
-					subtotal.innerText = "0";
-					if (item.value != "NULL") {
-						price.readOnly = item.value == "大頭菜" ? false : true;
-						price.value = item.value == "大頭菜" ? "" : data[index[item.value]["type"]][index[item.value]["index"]]["售價"] * modifier;
-						quantity.placeholder = item.value == "大頭菜" ? "10 顆為一單位" : "";
-					}
+					price.readOnly = target == "大頭菜" ? false : true;
+					price.value = target == "大頭菜" ? "" : obj["售價"] * modifier;
+					quantity.placeholder = target == "大頭菜" ? "10 顆 1 單位" : "";
 				}
 				item.appendChild(option);
 			});
@@ -129,10 +125,10 @@ xhr.addEventListener("load", function(){
 		case "item":
 			price.value = "0";
 			subtotal.innerText = "0";
-			if (item.value != "NULL") {
-				price.readOnly = item.value == "大頭菜" ? false : true;
-				price.value = item.value == "大頭菜" ? "" : data[index[item.value]["type"]][index[item.value]["index"]]["售價"] * modifier;
-				quantity.placeholder = item.value == "大頭菜" ? "10 顆為一單位" : "";
+			if (e.target.value != "NULL") {
+				price.readOnly = e.target.value == "大頭菜" ? false : true;
+				price.value = e.target.value == "大頭菜" ? "" : data[index[e.target.value]["type"]][index[e.target.value]["index"]]["售價"] * modifier;
+				quantity.placeholder = e.target.value == "大頭菜" ? "10 顆 1 單位" : "";
 			}
 			break;
 		}
@@ -177,7 +173,6 @@ function createRow(data) {
 	subtotal.classList.add("subtotal");
 	remove.classList.add("remove");
 	remove.classList.add("button");
-	remove.classList.add("warn");
 	quantity.type = "number";
 	item.disabled = true;
 	price.value = "0";
