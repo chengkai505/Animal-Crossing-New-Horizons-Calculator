@@ -229,6 +229,7 @@ body > footer a:hover {
         padding: 0 5%;
     }
     #list .row {
+        margin: .5rem 0;
         grid-template-columns: 5rem auto;
     }
     #list .tag {
