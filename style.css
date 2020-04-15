@@ -125,7 +125,7 @@ body:before {
     transition: var(--theme-transition);
     box-sizing: border-box;
 }
-#list-body .type:focus, #list-body .item:focus, #list-body .price:focus, #list-body .quantity:focus, #list-body #subtotal:focus, #list-body .remove:focus {
+#list-body .type:focus, #list-body .item:focus, #list-body .price:focus, #list-body .quantity:focus, #list-body .subtotal:focus, #list-body .remove:focus {
     outline: none;
     box-shadow: 0 0 1em 0.2em rgba(66, 165, 255, 0.4);
 }
@@ -229,7 +229,7 @@ body > footer a:hover {
         padding: 0 5%;
     }
     #list-body .row:not(:first-child) {
-        margin-top: 5rem;
+        margin-top: 3rem;
     }
     #list .row {
         grid-template-columns: 5rem auto;
