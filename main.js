@@ -20,6 +20,7 @@ xhr.addEventListener("load", function(){
 		for (let i = 0; i < opt.length; i++) {
 			if (opt[i].checked) {
 				modifier = opt[i].value;
+				notice("normal", "以「" + opt[i].nextElementSibling.innerText + "」方式計價");
 				break;
 			}
 		}
@@ -89,6 +90,7 @@ xhr.addEventListener("load", function(){
 				item.appendChild(option);
 			});
 			document.getElementById("list-body").appendChild(div);
+			notice("successful", "成功新增「" + target + "」");
 		}
 	});
 	/* List */
@@ -137,16 +139,26 @@ xhr.addEventListener("load", function(){
 	/* Button Event */
 	document.getElementById("list-body").addEventListener("click", function(e){
 		if (e.target.classList.contains("remove")) {
+		let name = e.target.parentElement.getElementsByClassName("item")[0].value;
 			e.target.parentElement.remove();
 			totalUpdate();
+			notice("successful", "成功刪除「" + (name != "NULL" ? name : "請選擇") + "」");
 		}
 	});
 	document.getElementById("add-new-row").addEventListener("click", function(){
 		document.getElementById("list-body").appendChild(createRow(data));
+		notice("successful", "成功新增一欄");
 	});
 	document.getElementById("clear-row").addEventListener("click", function(){
-		document.getElementById("list-body").innerHTML = "";
-		totalUpdate();
+		let list = document.getElementById("list-body");
+		if (list.innerHTML == "") {
+			notice("normal", "清單已空");
+		}
+		else {
+			document.getElementById("list-body").innerHTML = "";
+			totalUpdate();
+			notice("successful", "成功清空清單");
+		}
 	});
 });
 xhr.open("GET","data.json");
@@ -207,4 +219,19 @@ function totalUpdate() {
 		sum += parseInt(rows[i].getElementsByClassName("subtotal")[0].value);
 	}
 	document.getElementById("total-number").innerText = sum;
+}
+function notice(cls, content) {
+	let notice = document.getElementById("notice");
+	let row = document.createElement("div");
+	let label = document.createElement("span");
+	row.classList.add(cls);
+	row.classList.add("row");
+	row.classList.add("show");
+	label.classList.add("label");
+	label.innerText = content;
+	row.appendChild(label);
+	notice.appendChild(row);
+	setTimeout(function(){
+		row.remove();
+	}, 10000, false);
 }

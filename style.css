@@ -213,6 +213,90 @@ body:before {
     background: #333;
     color: #fff;
 }
+#notice {
+    position: fixed;
+    top: 0;
+    right: 0;
+    max-width: 100%;
+    max-height: 100vh;
+    transition: var(--theme-transition);
+}
+#notice .row {
+    position: relative;
+    margin: 1rem;
+    padding: .5rem 1rem;
+    border-radius: .5rem;
+    max-width: calc(100% - 2rem);
+    min-width: calc(150px - 2rem);
+    box-sizing: border-box;
+    background: transparent;
+    transition: inherit;
+    overflow: hidden;
+    animation-duration: 10s;
+    animation-timing-function: ease-in-out;
+}
+#notice .row:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: inherit;
+    background: #ccc;
+    animation-name: notice-before;
+    animation-duration: inherit;
+    animation-timing-function: inherit;
+    z-index: -2;
+}
+#notice .row:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    border-radius: inherit;
+    background: #333;
+    animation-name: notice-after;
+    animation-duration: inherit;
+    animation-timing-function: inherit;
+    z-index: -1;
+}
+#notice .row .label {
+    color: #fff;
+    animation-name: notice-label;
+    animation-duration: inherit;
+    animation-timing-function: inherit;
+}
+#notice .row.successful:after {
+    background: #008000;
+}
+#notice .row.fail:after {
+    background: #ff0000;
+}
+@keyframes notice-before {
+    0%, 100% {
+        left: 100%;
+    }
+    10%, 90% {
+        left: 0;
+    }
+}
+@keyframes notice-after {
+    0%, 10%, 90%, 100% {
+        bottom: 100%;
+    }
+    20%, 80% {
+        bottom: 0;
+    }
+}
+@keyframes notice-label {
+    0%, 20%, 80%, 100% {
+        opacity: 0;
+    }
+    30%, 70% {
+        opacity: 1;
+    }
+}
 body > footer {
     margin: 2rem 0;
 }
