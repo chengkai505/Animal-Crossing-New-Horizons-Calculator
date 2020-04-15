@@ -24,7 +24,6 @@ xhr.addEventListener("load", function(){
 			}
 		}
 		let rows = document.getElementById("list-body").getElementsByClassName("row");
-		let sum = 0;
 		for (let i = 0; i < rows.length; i++) {
 			let type = rows[i].getElementsByClassName("type")[0];
 			let item = rows[i].getElementsByClassName("item")[0];
@@ -35,10 +34,9 @@ xhr.addEventListener("load", function(){
 				continue;
 			}
 			price.value = data[index[item.value]["type"]][index[item.value]["index"]]["售價"] * modifier;
-			subtotal.innerText = parseInt(quantity.value != "" ? quantity.value : 0) * data[index[item.value]["type"]][index[item.value]["index"]]["售價"] * modifier;
-			sum += parseInt(subtotal.innerText);
+			subtotal.value = parseInt(quantity.value != "" ? quantity.value : 0) * data[index[item.value]["type"]][index[item.value]["index"]]["售價"] * modifier;
 		}
-		document.getElementById("total-number").innerText = sum;
+		totalUpdate();
 	});
 	/* Search */
 	document.getElementById("search-bar").addEventListener("change", function(){
@@ -72,7 +70,6 @@ xhr.addEventListener("load", function(){
 			let item = div.getElementsByClassName("item")[0];
 			let price = div.getElementsByClassName("price")[0];
 			let quantity = div.getElementsByClassName("quantity")[0];
-			let subtotal = div.getElementsByClassName("subtotal")[0];
 			item.disabled = false;
 			for (let i = 0; i < type.children.length; i++) {
 				if (type.children[i].innerText == index[target]["type"]) {
@@ -107,7 +104,7 @@ xhr.addEventListener("load", function(){
 		case "type":
 			item.innerHTML = "<option value='NULL'>請選擇</option>";
 			price.value = "0";
-			subtotal.innerText = "0";
+			subtotal.value = "0";
 			if (e.target.value != "NULL") {
 				data[e.target.value].forEach(function(obj){
 					let option = document.createElement("option");
@@ -133,7 +130,7 @@ xhr.addEventListener("load", function(){
 			break;
 		}
 		if (quantity.value != "") {
-			subtotal.innerText = price.value * quantity.value;
+			subtotal.value = price.value * quantity.value;
 		}
 		totalUpdate();
 	});
@@ -162,7 +159,7 @@ function createRow(data) {
 	let item = document.createElement("select");
 	let price = document.createElement("input");
 	let quantity = document.createElement("input");
-	let subtotal = document.createElement("span");
+	let subtotal = document.createElement("input");
 	let remove = document.createElement("button");
 	let defaultOpt = document.createElement("option");
 	div.classList.add("row");
@@ -174,13 +171,15 @@ function createRow(data) {
 	remove.classList.add("remove");
 	remove.classList.add("button");
 	remove.classList.add("warn");
-	quantity.type = "number";
 	item.disabled = true;
 	price.value = "0";
 	price.readOnly = true;
 	price.type = "number";
 	price.placeholder = "請輸入價格";
-	subtotal.innerText = "0";
+	quantity.type = "number";
+	subtotal.type = "number";
+	subtotal.value = "0";
+	subtotal.readOnly = true;
 	remove.innerHTML = "<span class='fas fa-times'></span>";
 	defaultOpt.value = "NULL";
 	defaultOpt.innerText = "請選擇";
@@ -205,7 +204,7 @@ function totalUpdate() {
 	let sum = 0;
 	let rows = document.getElementById("list-body").getElementsByClassName("row");
 	for (let i = 0; i < rows.length; i++) {
-		sum += parseInt(rows[i].getElementsByClassName("subtotal")[0].innerText);
+		sum += parseInt(rows[i].getElementsByClassName("subtotal")[0].value);
 	}
 	document.getElementById("total-number").innerText = sum;
 }
