@@ -228,8 +228,10 @@ body > footer a:hover {
     body {
         padding: 0 5%;
     }
+    #list-body .row:not(:first-child) {
+        margin-top: 5rem;
+    }
     #list .row {
-        margin: .5rem 0;
         grid-template-columns: 5rem auto;
     }
     #list .tag {
