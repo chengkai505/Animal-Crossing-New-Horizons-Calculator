@@ -4,8 +4,6 @@ xhr.addEventListener("load", function(){
 	let index = {};
 	let label = data["type"];
 	let modifier = 1;
-	/* Event settings */
-	let rowUpdate = new Event("change");
 	/* Make index */
 	label.forEach(function(l){
 		data[l].forEach(function(d, i){
@@ -85,7 +83,7 @@ xhr.addEventListener("load", function(){
 					option.selected = true;
 					price.readOnly = target == "大頭菜" ? false : true;
 					price.value = target == "大頭菜" ? "" : obj["售價"] * modifier;
-					quantity.placeholder = target == "大頭菜" ? "10 顆 1 單位" : "";
+					quantity.placeholder = target == "大頭菜" ? "單位：顆" : "";
 				}
 				item.appendChild(option);
 			});
@@ -127,7 +125,7 @@ xhr.addEventListener("load", function(){
 			if (e.target.value != "NULL") {
 				price.readOnly = e.target.value == "大頭菜" ? false : true;
 				price.value = e.target.value == "大頭菜" ? "" : data[index[e.target.value]["type"]][index[e.target.value]["index"]]["售價"] * modifier;
-				quantity.placeholder = e.target.value == "大頭菜" ? "10 顆 1 單位" : "";
+				quantity.placeholder = e.target.value == "大頭菜" ? "單位：顆" : "";
 			}
 			break;
 		}
