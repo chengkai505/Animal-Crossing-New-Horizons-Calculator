@@ -33,7 +33,7 @@ xhr.addEventListener("load", function(){
 				continue;
 			}
 			price.value = Math.floor(data[index[item.value]["type"]][index[item.value]["index"]]["售價"] * modifier);
-			subtotal.value = parseInt(quantity.value != "" ? quantity.value : 0) * data[index[item.value]["type"]][index[item.value]["index"]]["售價"] * modifier;
+			subtotal.value = parseInt(quantity.value != "" ? quantity.value : 0) * price.value;
 		}
 		totalUpdate();
 	});
