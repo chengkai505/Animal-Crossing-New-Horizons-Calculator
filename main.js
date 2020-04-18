@@ -32,7 +32,7 @@ xhr.addEventListener("load", function(){
 			if (type.value == "NULL") {
 				continue;
 			}
-			price.value = data[index[item.value]["type"]][index[item.value]["index"]]["售價"] * modifier;
+			price.value = Math.floor(data[index[item.value]["type"]][index[item.value]["index"]]["售價"] * modifier);
 			subtotal.value = parseInt(quantity.value != "" ? quantity.value : 0) * data[index[item.value]["type"]][index[item.value]["index"]]["售價"] * modifier;
 		}
 		totalUpdate();
@@ -82,7 +82,7 @@ xhr.addEventListener("load", function(){
 				if (obj["名稱"] == target) {
 					option.selected = true;
 					price.readOnly = target == "大頭菜" ? false : true;
-					price.value = target == "大頭菜" ? "" : obj["售價"] * modifier;
+					price.value = target == "大頭菜" ? "" : Math.floor(obj["售價"] * modifier);
 					quantity.placeholder = target == "大頭菜" ? "單位：顆" : "";
 				}
 				item.appendChild(option);
@@ -124,7 +124,7 @@ xhr.addEventListener("load", function(){
 			subtotal.innerText = "0";
 			if (e.target.value != "NULL") {
 				price.readOnly = e.target.value == "大頭菜" ? false : true;
-				price.value = e.target.value == "大頭菜" ? "" : data[index[e.target.value]["type"]][index[e.target.value]["index"]]["售價"] * modifier;
+				price.value = e.target.value == "大頭菜" ? "" : Math.floor(data[index[e.target.value]["type"]][index[e.target.value]["index"]]["售價"] * modifier);
 				quantity.placeholder = e.target.value == "大頭菜" ? "單位：顆" : "";
 			}
 			break;
