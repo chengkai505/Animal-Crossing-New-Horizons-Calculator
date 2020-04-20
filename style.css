@@ -2,6 +2,8 @@
     --theme-light-color: #fffff0;
     --theme-transition: all .2s ease;
     --font-color: #333;
+    --contrast-light-color: #f2a365;
+    --contrast-dark-color: #222831;
 }
 ::-webkit-scrollbar {
     width: 10px;
@@ -112,8 +114,8 @@ a:hover {
     background: #eee;
 }
 .result-list li.selected {
-    background: #333;
-    color: #fff;
+    background: var(--contrast-light-color);
+    color: var(--contrast-dark-color);
 }
 .row-header, .row-body .row{
     display: grid;
@@ -224,8 +226,10 @@ a:hover {
     margin: .5rem;
 }
 #sell-destination input[type="radio"]:checked + label {
-    background: #333;
-    color: #fff;
+    border-color: var(--contrast-light-color);
+    background: var(--contrast-light-color);
+    color: var(--contrast-dark-color);
+    font-weight: bold;
 }
 #notice {
     position: fixed;
@@ -276,6 +280,7 @@ a:hover {
     z-index: -1;
 }
 #notice .row .label {
+    cursor: default;
     color: #fff;
     animation-name: notice-label;
     animation-duration: inherit;

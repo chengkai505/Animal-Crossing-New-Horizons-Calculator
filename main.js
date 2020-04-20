@@ -63,7 +63,7 @@ xhr.addEventListener("load", function () {
                 }
             }
             e.target.classList.add("selected");
-            notice("normal", "成功指定「" + e.target.innerText + "」為商店高價收購品");
+            notice("successful", "成功指定「" + e.target.innerText + "」為商店高價收購品");
             doublePrice = e.target.innerText;
             priceUpdate();
         }
