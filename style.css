@@ -99,6 +99,7 @@ a:hover {
     padding: 0;
     max-height: 12rem;
     overflow: hidden scroll;
+    transition: inherit;
 }
 #result-list li {
     padding: 0 1rem;
