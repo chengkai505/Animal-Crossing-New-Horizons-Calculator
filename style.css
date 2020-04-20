@@ -114,13 +114,13 @@ a:hover {
     background: #333;
     color: #fff;
 }
-.row-body .row {
+.row-header, .row-body .row{
     display: grid;
     grid-template-columns: 6em repeat(4, 1fr) 3em;
     grid-gap: .5rem;
     margin: .5rem 0;
 }
-.row-header, .row-body .tag {
+.row-header > div, .row-body .tag {
     padding: .3rem 0;
     border-radius: .5rem;
     background: #333;
