@@ -102,6 +102,7 @@ a:hover {
     transition: inherit;
 }
 .result-list li {
+    margin-right: .5rem;
     padding: 0 1rem;
     border-radius: .5rem;
     cursor: pointer;
