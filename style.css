@@ -64,7 +64,7 @@ a:hover {
     margin: 0 auto;
     max-width: 30rem;
 }
-#search-bar {
+.search-bar {
     display: block;
     outline: none;
     margin: 1em auto;
@@ -79,10 +79,10 @@ a:hover {
     box-shadow: 0 0 1em 0.2em rgba(0,0,0,.1);
     transition: var(--theme-transition);
 }
-#search-bar:focus {
+.search-bar:focus {
     box-shadow: 0 0 1em 0.2em rgba(66, 165, 255, 0.4);
 }
-#result-container {
+.result-container {
     margin: 1rem auto;
     padding: 1rem;
     border-radius: .7em;
@@ -94,36 +94,40 @@ a:hover {
     box-shadow: 0 0 1em 0.2em rgba(0,0,0,.1);
     transition: var(--theme-transition);
 }
-#result-list {
+.result-list {
     margin: 0;
     padding: 0;
     max-height: 12rem;
     overflow: hidden scroll;
     transition: inherit;
 }
-#result-list li {
+.result-list li {
     padding: 0 1rem;
     border-radius: .5rem;
     cursor: pointer;
     transition: inherit;
 }
-#result-list li:hover {
+.result-list li:hover {
     background: #eee;
 }
-#list .row {
+.result-list li.selected {
+    background: #333;
+    color: #fff;
+}
+.row-body .row {
     display: grid;
     grid-template-columns: 6em repeat(4, 1fr) 3em;
     grid-gap: .5rem;
     margin: .5rem 0;
 }
-#list-header > div, #list-body .tag {
+.row-header, .row-body .tag {
     padding: .3rem 0;
     border-radius: .5rem;
     background: #333;
     color: #fff;
     cursor: default;
 }
-#list-body .type, #list-body .item, #list-body .price, #list-body .quantity, #list-body .subtotal, #list-body .remove {
+.row-body .type, .row-body .item, .row-body .price, .row-body .quantity, .row-body .subtotal, .row-body .remove {
     padding: 0 1rem;
     border: 1px solid #ccc;
     border-radius: .5rem;
@@ -134,20 +138,20 @@ a:hover {
     transition: var(--theme-transition);
     box-sizing: border-box;
 }
-#list-body .type:focus, #list-body .item:focus, #list-body .price:focus, #list-body .quantity:focus, #list-body .subtotal:focus, #list-body .remove:focus {
+.row-body .type:focus, .row-body .item:focus, .row-body .price:focus, .row-body .quantity:focus, .row-body .subtotal:focus, .row-body .remove:focus {
     outline: none;
     box-shadow: 0 0 1em 0.2em rgba(66, 165, 255, 0.4);
 }
-#list-body .tag {
+.row-body .tag {
     display: none;
 }
-#list-body .row input, #list-body .row select {
+.row-body .row input, .row-body .row select {
     padding-right: 0;
 }
-#list-body .remove:focus {
+.row-body .remove:focus {
     box-shadow: none;
 }
-#list-body .remove:active {
+.row-body .remove:active {
     transform: translateY(.1rem);
 }
 #list-footer {
@@ -313,16 +317,16 @@ a:hover {
     body {
         padding: 0 5%;
     }
-    #list-body .row:not(:first-child) {
+    .row-body .row:not(:first-child) {
         margin-top: 3rem;
     }
-    #list .row {
+    .row-body .row {
         grid-template-columns: 5rem auto;
     }
-    #list .tag {
+    .row-body .tag {
         display: block;
     }
-    #list #list-header {
+    .row-header {
         display: none;
     }
     #list-footer {

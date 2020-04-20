@@ -68,14 +68,18 @@
             <input name="source" type="radio" id="one-dot-five" value="1.5" />
             <label class="button switch" for="one-dot-five">高價收購</label>
         </div>
-        <h3>找東西</h3>
-        <div id="search">
-            <input id="search-bar" placeholder="搜尋" />
-            <div id="result-container"><ul id="result-list"></ul></div>
+        <h3>本日 Nook 商店高價收購品</h3>
+        <div id="high-price-search" class="search">
+            <input id="high-price-search-bar" class="search-bar" placeholder="搜尋" />
+            <div id="high-price-result-container" class="result-container"><ul id="high-price-result-list" class="result-list"></ul></div>
         </div>
         <h2>清單</h2>
+        <div id="search" class="search">
+            <input id="search-bar" class="search-bar" placeholder="搜尋" />
+            <div id="result-container" class="result-container"><ul id="result-list" class="result-list"></ul></div>
+        </div>
         <div id="list">
-            <div id="list-header" class="row">
+            <div class="row-header row">
                 <div class="type">種類</div>
                 <div class="item">名稱</div>
                 <div class="price">單價</div>
@@ -83,7 +87,7 @@
                 <div class="subtotal">小計</div>
                 <div class="remove">刪除</div>
             </div>
-            <div id="list-body"></div>
+            <div class="row-body" id="list-body"></div>
             <div id="list-footer">
                 <div class="control-n-settings">
                     <button id="add-new-row" class="button safe">新增一欄</button>
