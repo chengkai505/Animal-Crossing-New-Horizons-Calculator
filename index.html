@@ -33,11 +33,14 @@
     <meta content="@Kai_Wu_TW" name="twitter:creator" />
     <meta content="https://chengkai505.github.io/Animal-Crossing-New-Horizons-Calculator/screenshot.jpg" name="twitter:image" />
 
-    <link href="https://chengkai505.github.io/Animal-Crossing-New-Horizons-Calculator/" rel="canonical" />
+    <link rel="canonical" href="https://chengkai505.github.io/Animal-Crossing-New-Horizons-Calculator/" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+TC:100,300|Roboto:100,300&display=swap" />
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="app.css" />
     <link rel="shortcut icon" href="/favicon.ico">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans|Noto+Sans+TC:400,900&display=swap">
-    <link rel="stylesheet" href="style.css" />
-    <script defer src="main.js"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-63074009-3"></script>
     <script>
@@ -50,15 +53,21 @@
     <script data-ad-client="ca-pub-1579558558142906" defer src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 </head>
 <body>
-    <header>
+    <header id="header">
         <h1>集合吧！動物森友會價錢計算機</h1>
-        <h2>選擇品項，自動計帳</h2>
-        <div class="description">
-            <p>百密一疏，Nook 商店裡的豆狸、粒狸會算錯錢？這個計算機幫你驗證究竟豆狸、粒狸算的對不對。品項可以在列表的地方手動新增，也可以用搜尋來找品項喔！</p>
-            <p>如果要新增計算機中沒有的資料，可以至 <a href="https://github.com/chengkai505/Animal-Crossing-New-Horizons-Calculator/issues/new/choose" target="_blank">GitHub Issue</a> 中新增。</p>
-        </div>
+        <p>百密一疏，Nook 商店裡的豆狸、粒狸會算錯錢？這個計算機幫你驗證究竟豆狸、粒狸算的對不對。品項可以在列表的地方手動新增，也可以用搜尋來找品項喔！</p>
     </header>
-    <main>
+
+    <div id="nav-container">
+        <a href="https://kai73002981.blogspot.com/" class="logo">Wckblog</a>
+        <nav id="nav-inner">
+            <a href="/">首頁</a>
+            <a href="https://www.facebook.com/kai73002981/">Facebook</a>
+            <a id="nav-close"><span class="fas fa-times"></span></a>
+        </nav>
+        <a id="nav-open"><span class="fas fa-bars"></span></a>
+    </div>
+    <main id="app">
         <h2>計算機設定</h2>
         <h3>賣給誰？</h3>
         <div id="sell-destination">
@@ -101,8 +110,16 @@
         </div>
         <div id="notice"></div>
     </main>
+    <p class="description">如果要新增計算機中沒有的資料，可以至 <a href="https://github.com/chengkai505/Animal-Crossing-New-Horizons-Calculator/issues/new/choose" target="_blank">GitHub Issue</a> 中新增。</p>
     <footer id="footer">
-        &copy; Copyright 2020 by <a href="https://www.facebook.com/kai73002981">Kai Wu</a>. Image: <a href="https://unsplash.com/">Unsplash</a>.
+        <div class="copyright">
+            <p>&copy; Kai Wu 作品集</p>
+            <p>設計: <a href="https://templated.co">TEMPLATED</a>.</p>
+            <p>圖片: <a href="https://unsplash.com">Unsplash</a>.</p>
+            <p>修改: <a href="https://www.facebook.com/kai73002981">Kai Wu</a></p>
+        </div>
     </footer>
+    <script defer src="/main.js"></script>
+    <script defer src="app.js"></script>
 </body>
 </html>
