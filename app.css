@@ -344,10 +344,6 @@
 }
 
 @media screen and (max-width: 768px) {
-    body {
-        padding: 0 5%;
-    }
-
     .row-body .row:not(:first-child) {
         margin-top: 3rem;
     }
