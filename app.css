@@ -1,8 +1,6 @@
 ﻿:root {
     --theme-light-color: #fffff0;
     --font-color: #333;
-    --contrast-light-color: #f2a365;
-    --contrast-dark-color: #222831;
 }
 
 #header {
@@ -165,54 +163,6 @@
 #total {
     text-align: right;
 }
-
-.button {
-    position: relative;
-    outline: none;
-    padding: .3rem 1rem;
-    border: 1px solid #333;
-    border-radius: .5rem;
-    background: transparent;
-    font: inherit;
-    color: #333;
-    cursor: pointer;
-    transition: var(--theme-transition);
-}
-
-    .button:after {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        z-index: 1;
-    }
-
-    .button:hover {
-        background: #333;
-        color: #fff;
-    }
-
-    .button:active {
-        transform: translateY(.1rem);
-    }
-
-    .button.switch:hover {
-        border-color: #ddd !important;
-        background: #ddd !important;
-        color: #333 !important;
-    }
-
-    .button.safe:hover {
-        border-color: #008000 !important;
-        background: #008000 !important;
-    }
-
-    .button.warn:hover {
-        border-color: #ff0000 !important;
-        background: #ff0000 !important;
-    }
 
 #total-label {
     font-size: 1.2rem;
