@@ -28,7 +28,7 @@ xhr.addEventListener("load", function () {
         priceUpdate();
     });
 /* Nook high price settings */
-    document.getElementById("high-price-search-bar").addEventListener("change", function () {
+    document.getElementById("high-price-search-bar").addEventListener("input", function () {
         let keyword = this.value;
         document.getElementById("high-price-result-list").innerHTML = "";
         if (keyword != "") {
@@ -69,7 +69,7 @@ xhr.addEventListener("load", function () {
         }
     });
 /* Search */
-    document.getElementById("search-bar").addEventListener("change", function () {
+    document.getElementById("search-bar").addEventListener("input", function () {
         let keyword = this.value;
         document.getElementById("result-list").innerHTML = "";
         if (keyword != "") {
