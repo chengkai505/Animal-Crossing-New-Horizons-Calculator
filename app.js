@@ -1,4 +1,4 @@
-﻿let xhr = new XMLHttpRequest();
+let xhr = new XMLHttpRequest();
 let data;
 let index = {};
 let label;
@@ -221,7 +221,7 @@ function createRow() {
     subtotal.type = "number";
     subtotal.value = "0";
     subtotal.readOnly = true;
-    remove.innerHTML = "<span class='fas fa-times'></span>";
+    remove.innerText = "x";
     defaultOpt.value = "NULL";
     defaultOpt.innerText = "請選擇";
     item.appendChild(defaultOpt);

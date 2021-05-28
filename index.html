@@ -1,74 +1,80 @@
-﻿<!DOCTYPE html>
-
-<html lang="zh-tw">
+<!DOCTYPE html>
+<html lang="zh_TW">
+	
 <head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <title>集合吧！動物森友會價錢計算機</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>集合吧！動物森友會價錢計算機 - Kaiの工作坊</title>
+	<meta content="百密一疏，Nook 商店裡的豆狸、粒狸會算錯錢？這個計算機幫你驗證究竟豆狸、粒狸算的對不對。品項可以在列表的地方手動新增，也可以用搜尋來找品項喔！" name="description">
+	<meta content="Kai" name="author">
+	<meta content="global" name="distribution">
+	<meta content="general" name="rating">
+	<meta content="Kaiの工作坊" name="generator">
+	<meta content="Kaiの工作坊" property="og:site_name">
+	<meta content="集合吧！動物森友會價錢計算機 - Kaiの工作坊" property="og:title">
+	<meta content="百密一疏，Nook 商店裡的豆狸、粒狸會算錯錢？這個計算機幫你驗證究竟豆狸、粒狸算的對不對。品項可以在列表的地方手動新增，也可以用搜尋來找品項喔！" property="og:description">
+	<meta content="https://kai-tw.github.io/Animal-Crossing-New-Horizons-Calculator/index.html" property="og:url">
+	<meta content="zh_TW" property="og:locale">
+	<meta content="website" property="og:type">
+	<meta content="banner.jpg" property="og:image">
+	<meta content="集合吧！動物森友會價錢計算機 - Kaiの工作坊" property="og:image:alt">
+	<meta content="https://www.facebook.com/kai73002981 property="article:author">
+	<meta content="100002230311263" property="fb:admins">
+	<meta content="464054490444742" property="fb:app_id">
+	<meta content="集合吧！動物森友會價錢計算機 - Kaiの工作坊" name="twitter:title">
+	<meta content="summary" name="twitter:card">
+	<meta content="@Kai_Wu_TW" name="twitter:site">
+	<meta content="@Kai_Wu_TW" name="twitter:creator">
+	<meta content="pageThumbnail" name="twitter:image">
+	<link rel="canonical" href="https://kai-tw.github.io/Animal-Crossing-New-Horizons-Calculator/index.html">
+<link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;700&display=swap&text=K" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+<link href="/css/style.css" rel="stylesheet">
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-63074009-3"></script>
+<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag() { dataLayer.push(arguments); }
+	gtag('js', new Date());
 
-    <meta content="百密一疏，Nook 商店裡的豆狸、粒狸會算錯錢？這個計算機幫你驗證究竟豆狸、粒狸算的對不對。品項可以在列表的地方手動新增，也可以用搜尋來找品項喔！" name="description" />
-    <meta content="Kai Wu" name="author" />
-    <meta content="global" name="distribution" />
-    <meta content="general" name="rating" />
-
-    <meta content="Wckblog" property="og:site_name" />
-    <meta content="集合吧！動物森友會價錢計算機" property="og:title" />
-    <meta content="百密一疏，Nook 商店裡的豆狸、粒狸會算錯錢？這個計算機幫你驗證究竟豆狸、粒狸算的對不對。品項可以在列表的地方手動新增，也可以用搜尋來找品項喔！" property="og:description" />
-    <meta content="https://chengkai505.github.io/Animal-Crossing-New-Horizons-Calculator/" property="og:url" />
-    <meta content="zh_tw" property="og:locale" />
-
-    <meta content="website" property="og:type" />
-    <meta content="https://chengkai505.github.io/Animal-Crossing-New-Horizons-Calculator/screenshot.jpg" property="og:image" />
-    <meta content="1920" property="og:image:width" />
-    <meta content="900" property="og:image:height" />
-    <meta content="集合吧！動物森友會價錢計算機" property="og:image:alt" />
-
-    <meta content="https://www.facebook.com/kai73002981" property="article:author" />
-    <meta content="100002230311263" property="fb:admins" />
-    <meta content="464054490444742" property="fb:app_id" />
-
-    <meta content="集合吧！動物森友會價錢計算機" name="twitter:title" />
-    <meta content="summary" name="twitter:card" />
-    <meta content="@Kai_Wu_TW" name="twitter:site" />
-    <meta content="@Kai_Wu_TW" name="twitter:creator" />
-    <meta content="https://chengkai505.github.io/Animal-Crossing-New-Horizons-Calculator/screenshot.jpg" name="twitter:image" />
-
-    <link rel="canonical" href="https://chengkai505.github.io/Animal-Crossing-New-Horizons-Calculator/" />
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+TC:100,300|Roboto:100,300&display=swap" />
-    <link rel="stylesheet" href="/css/style.css" />
-    <link rel="stylesheet" href="app.css" />
-    <link rel="shortcut icon" href="/favicon.ico">
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-63074009-3"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'UA-63074009-3');
-    </script>
-    <script data-ad-client="ca-pub-1579558558142906" defer src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	gtag('config', 'UA-63074009-3');
+</script>
 </head>
-<body>
-    <header id="header">
-        <h1>集合吧！動物森友會價錢計算機</h1>
-        <p>百密一疏，Nook 商店裡的豆狸、粒狸會算錯錢？這個計算機幫你驗證究竟豆狸、粒狸算的對不對。品項可以在列表的地方手動新增，也可以用搜尋來找品項喔！</p>
-    </header>
-
-    <div id="nav-container">
-        <a href="https://kai73002981.blogspot.com/" class="logo">Wckblog</a>
-        <nav id="nav-inner">
-            <a href="/">首頁</a>
-            <a href="https://www.facebook.com/kai73002981/">Facebook</a>
-            <a id="nav-close"><span class="fas fa-times"></span></a>
-        </nav>
-        <a id="nav-open"><span class="fas fa-bars"></span></a>
-    </div>
-    <main id="app">
-        <h2>計算機設定</h2>
+	<body>
+		<header id="site-header">
+	<h1 id="logo">
+		K
+	</h1>
+	<div class="header-contents">
+		<nav>
+			
+			<a href="/">home</a>
+			
+			<a target="_blank" rel="noopener" href="https://kai73002981.blogspot.com">blog</a>
+			<a target="_blank" rel="noopener" href="https://www.facebook.com/kai73002981">facebook</a>
+			<a target="_blank" rel="noopener" href="https://www.youtube.com/channel/UCZhZRsUaoxa4QpIeBmmeFeQ">youtube</a>
+			<a target="_blank" rel="noopener" href="https://odysee.com/@kai-tw:e">lbry</a>
+			
+			<a href="/archives/">archives</a>
+			
+		</nav>
+		<button id="header-expand-btn"><img src="/images/segment-black-18dp.svg"></button>
+	</div>
+</header>
+		<main>
+			<header class="post-thumbnail" id="banner">
+		<h1 class="post-headline">集合吧！動物森友會價錢計算機</h1>
+		
+			<time class="post-time" datetime="2021-05-28T05:27:01-08:00">2021.05.28</time>
+		
+		
+		<style>
+			#banner {background-image: url(banner.jpg)}
+		</style>
+		
+	</header>
+<div id="app">
+	<h2>計算機設定</h2>
         <h3>賣給誰？</h3>
         <div id="sell-destination">
             <input name="source" type="radio" id="dot-eight" value="0.8" />
@@ -109,17 +115,14 @@
             </div>
         </div>
         <div id="notice"></div>
-    </main>
     <p class="description">如果要新增計算機中沒有的資料，可以至 <a href="https://github.com/chengkai505/Animal-Crossing-New-Horizons-Calculator/issues/new/choose" target="_blank">GitHub Issue</a> 中新增。</p>
-    <footer id="footer">
-        <div class="copyright">
-            <p>&copy; Kai Wu 作品集</p>
-            <p>設計: <a href="https://templated.co">TEMPLATED</a>.</p>
-            <p>圖片: <a href="https://unsplash.com">Unsplash</a>.</p>
-            <p>修改: <a href="https://www.facebook.com/kai73002981">Kai Wu</a></p>
-        </div>
-    </footer>
-    <script defer src="/js/main.js"></script>
-    <script defer src="app.js"></script>
-</body>
+</div>
+<link rel="stylesheet" href="app.css">
+<script defer src="app.js"></script>
+			<footer>
+				本著作由 <a xmlns:cc="http://creativecommons.org/ns#" target="_blank" href="https://www.facebook.com/kai73002981" property="cc:attributionName" rel="cc:attributionURL noopener">Kai</a> 製作，以<a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">創用 CC 姓名標示-非商業性-相同方式分享 4.0 國際 授權條款</a>釋出。
+			</footer>
+		</main>
+		<script src="/js/main.js" defer></script>
+	</body>
 </html>
