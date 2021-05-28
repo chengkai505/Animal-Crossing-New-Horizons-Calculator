@@ -65,7 +65,7 @@
 			<header class="post-thumbnail" id="banner">
 		<h1 class="post-headline">集合吧！動物森友會價錢計算機</h1>
 		
-			<time class="post-time" datetime="2021-05-28T05:27:01-08:00">2021.05.28</time>
+			<time class="post-time" datetime="2021-05-28T05:48:33-08:00">2021.05.28</time>
 		
 		
 		<style>
@@ -75,47 +75,48 @@
 	</header>
 <div id="app">
 	<h2>計算機設定</h2>
-        <h3>賣給誰？</h3>
-        <div id="sell-destination">
-            <input name="source" type="radio" id="dot-eight" value="0.8" />
-            <label class="button switch" for="dot-eight">收購箱</label>
-            <input name="source" type="radio" id="normal" value="1" checked />
-            <label class="button switch" for="normal">Nook 商店</label>
-            <input name="source" type="radio" id="one-dot-five" value="1.5" />
-            <label class="button switch" for="one-dot-five">高價收購</label>
+<h3>賣給誰？</h3>
+<div id="sell-destination">
+    <input name="source" type="radio" id="dot-eight" value="0.8" />
+    <label class="button switch" for="dot-eight">收購箱</label>
+    <input name="source" type="radio" id="normal" value="1" checked />
+    <label class="button switch" for="normal">Nook 商店</label>
+    <input name="source" type="radio" id="one-dot-five" value="1.5" />
+    <label class="button switch" for="one-dot-five">高價收購</label>
+</div>
+<h3>本日 Nook 商店高價收購品</h3>
+<div id="high-price-search" class="search">
+    <input id="high-price-search-bar" class="search-bar" placeholder="搜尋" />
+    <div id="high-price-result-container" class="result-container"><ul id="high-price-result-list" class="result-list"></ul></div>
+</div>
+<h2>清單</h2>
+<div id="search" class="search">
+    <input id="search-bar" class="search-bar" placeholder="搜尋" />
+    <div id="result-container" class="result-container"><ul id="result-list" class="result-list"></ul></div>
+</div>
+<div id="list">
+    <div class="row-header row">
+        <div class="type">種類</div>
+        <div class="item">名稱</div>
+        <div class="price">單價</div>
+        <div class="quantity">數量</div>
+        <div class="subtotal">小計</div>
+        <div class="remove">刪除</div>
+    </div>
+    <div class="row-body" id="list-body"></div>
+    <div id="list-footer">
+        <div class="control-n-settings">
+            <button id="add-new-row" class="button safe">新增一欄</button>
+            <button id="clear-row" class="button warn">清空清單</button>
         </div>
-        <h3>本日 Nook 商店高價收購品</h3>
-        <div id="high-price-search" class="search">
-            <input id="high-price-search-bar" class="search-bar" placeholder="搜尋" />
-            <div id="high-price-result-container" class="result-container"><ul id="high-price-result-list" class="result-list"></ul></div>
+        <div id="total">
+            <span id="total-label">總計</span><span id="total-number">0</span><span id="total-unit">鈴錢</span>
         </div>
-        <h2>清單</h2>
-        <div id="search" class="search">
-            <input id="search-bar" class="search-bar" placeholder="搜尋" />
-            <div id="result-container" class="result-container"><ul id="result-list" class="result-list"></ul></div>
-        </div>
-        <div id="list">
-            <div class="row-header row">
-                <div class="type">種類</div>
-                <div class="item">名稱</div>
-                <div class="price">單價</div>
-                <div class="quantity">數量</div>
-                <div class="subtotal">小計</div>
-                <div class="remove">刪除</div>
-            </div>
-            <div class="row-body" id="list-body"></div>
-            <div id="list-footer">
-                <div class="control-n-settings">
-                    <button id="add-new-row" class="button safe">新增一欄</button>
-                    <button id="clear-row" class="button warn">清空清單</button>
-                </div>
-                <div id="total">
-                    <span id="total-label">總計</span><span id="total-number">0</span><span id="total-unit">鈴錢</span>
-                </div>
-            </div>
-        </div>
-        <div id="notice"></div>
-    <p class="description">如果要新增計算機中沒有的資料，可以至 <a href="https://github.com/chengkai505/Animal-Crossing-New-Horizons-Calculator/issues/new/choose" target="_blank">GitHub Issue</a> 中新增。</p>
+    </div>
+</div>
+<div id="notice"></div>
+<p class="description">如果要新增計算機中沒有的資料，可以至 <a href="https://github.com/kai-tw/Animal-Crossing-New-Horizons-Calculator/issues/" target="_blank">GitHub Issue</a> 中新增。</p>
+
 </div>
 <link rel="stylesheet" href="app.css">
 <script defer src="app.js"></script>
